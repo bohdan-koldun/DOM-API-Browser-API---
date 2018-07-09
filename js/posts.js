@@ -9,7 +9,7 @@ function appendPosts(postsJson) {
   //append posts nodes to html DOM
   for (let i = 0; i < length; i++) {
 
-    if (postsJson.data[i].showPost !== -1 || postsJson.data[i].deletedPost !== true) {
+    if ((postsJson.data[i].showPost !== -1) || (postsJson.data[i].deletedPost == true)) {
       let post = document.createElement('article');
 
       let tags = ``;
