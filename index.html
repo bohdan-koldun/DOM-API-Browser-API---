@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-<title>Блог. Домашка DOM API Browser API - Василий Терлецкий</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<head>
+    <title>Блог. Домашка DOM API Browser API - Василий Терлецкий</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" type="text/css" href="css/tags-input.css">
-<script src="js/tags-input.js"></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
-<style>
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Raleway", sans-serif
-    }
+    <link rel="stylesheet" type="text/css" href="css/tags-input.css">
+    <script src="js/tags-input.js"></script>
 
-    #posts-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 15px;
-    }
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif
+        }
 
-    .post {
-        padding: 0.01em 16px;
-        display: grid;
-        grid-template-columns: 150px 1fr;
-        grid-gap: 10px;
-    }
-    .filter-menu{
-        padding: 0.01em 16px;
-        display: grid;
-        grid-template-columns: 320px 1fr 1fr;
-        grid-gap: 10px;
-    }
-    .tags-input{
-   width: 310px!important;
-    }
+        #posts-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 15px;
+        }
 
-    @media (max-width: 992px){
-        .filter-menu{
-  
-        grid-template-columns: 1fr;
-    }
+        .post {
+            padding: 0.01em 16px;
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            grid-gap: 10px;
+        }
 
-    }
-</style>
+        .filter-menu {
+            padding: 0.01em 16px;
+            display: grid;
+            grid-template-columns: 320px 1fr 1fr;
+            grid-gap: 10px;
+        }
+
+        .tags-input {
+            width: 310px !important;
+        }
+
+        @media (max-width: 992px) {
+            .filter-menu {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
 
 </head>
+
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
     <!-- Sidebar/menu -->
@@ -112,15 +116,16 @@
                     <b>My Blog</b>
                 </h1>
                 <div class="w3-section w3-bottombar w3-padding-16 filter-menu">
-                    <div>   <span class="w3-margin-right">Filter:</span>
+                    <div>
+                        <span class="w3-margin-right">Filter:</span>
                         <select class="w3-button w3-white w3-black" id="date_filter">
 
-                      
-                 
-                        <option value="recently">Recently uploaded</option>
-                        <option value="firstly">Firstly uploads</option>
-                    </select>
-                </div>
+
+
+                            <option value="recently">Recently uploaded</option>
+                            <option value="firstly">Firstly uploads</option>
+                        </select>
+                    </div>
                     <input name="hashtags" type="tags" pattern="^#" placeholder="#tags" id="tags_filter" class="w3-button w3-white">
                     <input name="search" type="text" placeholder="search..." id="search_filter" class="w3-button w3-white" style="text-align: left;">
                 </div>
@@ -136,7 +141,7 @@
 
 
 
-        <div class="w3-container w3-padding-large" id="#about">
+        <div class="w3-container w3-padding-large" id="about">
             <h4>
                 <b>About Me</b>
             </h4>
@@ -272,7 +277,7 @@
 
         <script>
             function scrolled() {
-               alert('ee');
+                alert('ee');
             }
 
             document.getElementById('posts-grid').onscroll = scrolled;
