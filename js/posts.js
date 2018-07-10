@@ -10,7 +10,7 @@ function appendPosts(postsJson) {
   let maxCount = sessionStorage.getItem('max_count');
   if (maxCount == undefined) {
     maxCount = 10;
-    localStorage.setItem('max_count', maxCount);
+    sessionStorage.setItem('max_count', maxCount);
   }
 
 
@@ -92,13 +92,14 @@ function loadJSON(sortUploudsDate = 'recently', tags = [], keySearch = '', delet
 
 function appendTen(e) {
   e.target.removeEventListener('onmouseover',appendTen); 
-  let maxCount = sessionStorage.getItem('max_count') + 10;
-  localStorage.setItem('max_count', maxCount);
+  let maxCount = 1*sessionStorage.getItem('max_count');
+  maxCount += 10;
+  sessionStorage.setItem('max_count', maxCount);
 
   let date = localStorage.getItem('date_filter');
   if (date == "firstly") document.getElementById('date_filter').value = "firstly";
   let tags = localStorage.getItem('tags_filter');
-  if (tags == '' || tags == null) tags = [];
+  if (tags == '' || tags == undefined) tags = [];
   else tags = tags.split(",");
   loadJSON(date, tags, '', []);
 }
