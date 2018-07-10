@@ -53,7 +53,7 @@
             <h4>
                 <b>MY BLOG</b>
             </h4>
-            <p class="w3-text-grey">Hometask DOM API  Browser API</p>
+            <p class="w3-text-grey">Hometask DOM API Browser API</p>
         </div>
         <div class="w3-bar-block">
             <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal">
@@ -115,16 +115,11 @@
         <!-- Pagination -->
         <div class="w3-center w3-padding-32">
             <div class="w3-bar">
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-                <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+
             </div>
         </div>
 
-        <div class="w3-container w3-padding-large" >
+        <div class="w3-container w3-padding-large">
             <h4>
                 <b>About Me</b>
             </h4>
@@ -132,136 +127,153 @@
                 ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum.
                 Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt
                 sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non
-                fringilla.</p>
+                fringilla.
+            </p>
             <hr>
 
 
-        <!-- Contact Section -->
-        <div class="w3-container w3-padding-large w3-grey">
-            <h4 id="contact">
-                <b>Contact Me</b>
-            </h4>
-            <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-                <div class="w3-third w3-dark-grey">
-                    <p>
-                        <i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i>
-                    </p>
-                    <p>email@email.com</p>
+            <!-- Contact Section -->
+            <div class="w3-container w3-padding-large w3-grey">
+                <h4 id="contact">
+                    <b>Contact Me</b>
+                </h4>
+                <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+                    <div class="w3-third w3-dark-grey">
+                        <p>
+                            <i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i>
+                        </p>
+                        <p>email@email.com</p>
+                    </div>
+                    <div class="w3-third w3-teal">
+                        <p>
+                            <i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i>
+                        </p>
+                        <p>Chicago, US</p>
+                    </div>
+                    <div class="w3-third w3-dark-grey">
+                        <p>
+                            <i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i>
+                        </p>
+                        <p>512312311</p>
+                    </div>
                 </div>
-                <div class="w3-third w3-teal">
-                    <p>
-                        <i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i>
-                    </p>
-                    <p>Chicago, US</p>
-                </div>
-                <div class="w3-third w3-dark-grey">
-                    <p>
-                        <i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i>
-                    </p>
-                    <p>512312311</p>
-                </div>
+                <hr class="w3-opacity">
+                <form action="/action_page.php" target="_blank">
+                    <div class="w3-section">
+                        <label>Name</label>
+                        <input class="w3-input w3-border" type="text" name="Name" required>
+                    </div>
+                    <div class="w3-section">
+                        <label>Email</label>
+                        <input class="w3-input w3-border" type="text" name="Email" required>
+                    </div>
+                    <div class="w3-section">
+                        <label>Message</label>
+                        <input class="w3-input w3-border" type="text" name="Message" required>
+                    </div>
+                    <button type="submit" class="w3-button w3-black w3-margin-bottom">
+                        <i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+                </form>
             </div>
-            <hr class="w3-opacity">
-            <form action="/action_page.php" target="_blank">
-                <div class="w3-section">
-                    <label>Name</label>
-                    <input class="w3-input w3-border" type="text" name="Name" required>
+
+            <!-- Footer -->
+            <footer class="w3-container w3-padding-32 w3-dark-grey">
+                <div class="w3-row-padding">
+                    <div class="w3-third">
+                        <h3>FOOTER</h3>
+                        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies
+                            congue gravida diam non fringilla.</p>
+                        <p>Powered by
+                            <a href="#">Bohdan Koldun</a>
+                        </p>
+                    </div>
+
+                    <div class="w3-third">
+                        <h3>BLOG POSTS</h3>
+                        <ul class="w3-ul w3-hoverable">
+                            <li class="w3-padding-16">
+                                <img src="img/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+                                <span class="w3-large">Lorem</span>
+                                <br>
+                                <span>Sed mattis nunc</span>
+                            </li>
+                            <li class="w3-padding-16">
+                                <img src="img/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
+                                <span class="w3-large">Ipsum</span>
+                                <br>
+                                <span>Praes tinci sed</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="w3-third">
+                        <h3>POPULAR TAGS</h3>
+                        <p>
+                            <span class="w3-tag w3-black w3-margin-bottom">Travel</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">New York</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">London</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">IKEA</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">NORWAY</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">Ideas</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">Baby</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">Family</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">Clothing</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">Shopping</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">Sports</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">Games</span>
+                        </p>
+                    </div>
+
                 </div>
-                <div class="w3-section">
-                    <label>Email</label>
-                    <input class="w3-input w3-border" type="text" name="Email" required>
-                </div>
-                <div class="w3-section">
-                    <label>Message</label>
-                    <input class="w3-input w3-border" type="text" name="Message" required>
-                </div>
-                <button type="submit" class="w3-button w3-black w3-margin-bottom">
-                    <i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
-            </form>
+            </footer>
+
+            <div class="w3-black w3-center w3-padding-24">Домашка DOM API Browser API - Василий Терлецкий
+                <a href="" title="https://binary-studio.com/" target="_blank" class="w3-hover-opacity">binary-studio.com</a>
+            </div>
+
+            <!-- End page content -->
         </div>
 
-        <!-- Footer -->
-        <footer class="w3-container w3-padding-32 w3-dark-grey">
-            <div class="w3-row-padding">
-                <div class="w3-third">
-                    <h3>FOOTER</h3>
-                    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue
-                        gravida diam non fringilla.</p>
-                    <p>Powered by
-                        <a href="#" >Bohdan Koldun</a>
-                    </p>
-                </div>
+        <script src="js/sort_function.js"></script>
+        <script src="js/posts.js"></script>
+        <script src="js/event_filters.js"></script>
 
-                <div class="w3-third">
-                    <h3>BLOG POSTS</h3>
-                    <ul class="w3-ul w3-hoverable">
-                        <li class="w3-padding-16">
-                            <img src="img/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
-                            <span class="w3-large">Lorem</span>
-                            <br>
-                            <span>Sed mattis nunc</span>
-                        </li>
-                        <li class="w3-padding-16">
-                            <img src="img/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-                            <span class="w3-large">Ipsum</span>
-                            <br>
-                            <span>Praes tinci sed</span>
-                        </li>
-                    </ul>
-                </div>
+        <script>
 
-                <div class="w3-third">
-                    <h3>POPULAR TAGS</h3>
-                    <p>
-                        <span class="w3-tag w3-black w3-margin-bottom">Travel</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">New York</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">London</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">IKEA</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">NORWAY</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Ideas</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Baby</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Family</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Clothing</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Shopping</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Sports</span>
-                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Games</span>
-                    </p>
-                </div>
+            let date = localStorage.getItem('date_filter');
+            if (date == "firstly") document.getElementById('date_filter').value = "firstly";
+            let tags = localStorage.getItem('tags_filter');
+            if (tags == '' || tags == null) tags = [];
+            else tags = tags.split(",");
+            loadJSON(date, tags, '', []);
+            [].forEach.call(document.querySelectorAll('input[type="tags"]'), tagsInput);
+            sessionStorage.clear();
+            //addTag("dsd");
+        </script>
 
-            </div>
-        </footer>
+        <script>
+            function scrolled() {
+               alert('ee');
+            }
 
-        <div class="w3-black w3-center w3-padding-24">Домашка DOM API  Browser API - Василий Терлецкий
-            <a href="" title="https://binary-studio.com/" target="_blank" class="w3-hover-opacity">binary-studio.com</a>
-        </div>
-
-        <!-- End page content -->
-    </div>
-
-    <script src="js/sort_function.js"></script>
-    <script src="js/posts.js"></script>
-    <script src="js/event_filters.js"></script>
-
-    <script>
-        loadJSON();
-        [].forEach.call(document.querySelectorAll('input[type="tags"]'), tagsInput);
-    </script>
+            document.getElementById('posts-grid').onscroll = scrolled;
+        </script>
 
 
-    <script>
-        // Script to open and close sidebar
-        function w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
-            document.getElementById("myOverlay").style.display = "block";
-        }
+        <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+            }
 
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-            document.getElementById("myOverlay").style.display = "none";
-        }
-    </script>
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+            }
+        </script>
 
 </body>
 

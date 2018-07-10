@@ -1,25 +1,34 @@
 // Date sort Functions
 let date_sort_asc = function (post1, post2) {
-    if (post1.createdAt > post2.createdAt) return 1;
-    if (post1.createdAt < post2.createdAt) return -1;
-    return 0;
-  };
-  
-  let date_sort_desc = function (post1, post2) {
-    if (post1.createdAt > post2.createdAt) return -1;
-    if (post1.createdAt < post2.createdAt) return 1;
-    return 0;
-  };
-  
 
-  let tags_sort_desc = function (post1, post2) {
-    return  post2.countFilterTags - post1.countFilterTags;
-  };
+    var date1 = new Date(post1.createdAt );
+    var date2 = new Date(post2.createdAt );
+    return date2-date1;
+};
+
+let date_sort_desc = function (post1, post2) {
+    var date1 = new Date(post1.createdAt );
+    var date2 = new Date(post2.createdAt );
+    return date1-date2;
+};
+
+
+let tags_sort_desc = function (post1, post2) {
+    return post2.countFilterTags - post1.countFilterTags;
+};
 
 
 
 
 //sort by Tag
+function searchTag(tag, tags) {
+    if (tags.indexOf(tag) == -1) {
+        return -1
+    } else {
+        return 1;
+    }
+}
+
 function sortByTags(postsJson, tags) {
 
     let length = postsJson.data.length;
@@ -27,7 +36,7 @@ function sortByTags(postsJson, tags) {
     for (let i = 0; i < length; i++) {
         let countFilterTags = 0;
         tags.forEach((item, j, arr) => {
-            countFilterTags += arr.indexOf(item);
+            countFilterTags += searchTag(item, postsJson.data[i].tags);
         });
         postsJson.data[i]["countFilterTags"] = countFilterTags;
     }
@@ -37,43 +46,45 @@ function sortByTags(postsJson, tags) {
 
 //search
 function searchStr(key, str) {
-var keyExp = new RegExp(key,"i");
-  if (str.search(keyExp) == -1) {
-    return -1
-  } else {
-    return 1;
-  }
+    var keyExp = new RegExp(key, "i");
+    if (str.search(keyExp) == -1) {
+        return -1
+    } else {
+        return 1;
+    }
 }
 
 function searchKeyword(postsJson, key) {
     let length = postsJson.data.length;
 
     for (let i = 0; i < length; i++) {
-        postsJson.data[i]["showPost"] =  searchStr(key, postsJson.data[i].title);
+        postsJson.data[i]["showPost"] = searchStr(key, postsJson.data[i].title);
     }
- }
+}
 
 
- //delete post
- function deletePost(postTitle) {
+//delete post
 
+function getDeletedPosts() {
+    let deletedPosts = sessionStorage.getItem("deleted_titels");
+    if (deletedPosts === '' || deletedPosts == null) deletedPosts = [];
+    else deletedPosts = deletedPosts.split(",");
+    return deletedPosts;
+}
+
+function deletePost(postTitle) {
+
+    let deletedPosts = getDeletedPosts();
+    deletedPosts.push(postTitle);
+    sessionStorage.setItem("deleted_titels", deletedPosts);
 
     let dateFilter = localStorage.getItem('date_filter');
     let tagsFilter = localStorage.getItem('tags_filter');
-    let searchFilter = localStorage.getItem('search_filter');
+    if (tagsFilter == '') tagsFilter = [];
+    else tagsFilter = tagsFilter.split(",");
 
+    let srchKeyword = document.getElementById('search_filter').value;
 
+    loadJSON(dateFilter, tagsFilter, srchKeyword , deletedPosts);
+}
 
-    // Получение данных из sessionStorage
-   var posts = sessionStorage.getItem('posts');
-
-   posts.forEach((item, i, arr) => {
-       if( postTitle === item.title){
-        post["deletedPost"] = true;
-       }
-
-});
-
-  
-   drawPost(posts, dateFilter, tagsFilter, searchFilter);
- }

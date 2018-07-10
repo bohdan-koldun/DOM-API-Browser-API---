@@ -1,16 +1,30 @@
 'use strict';
 
+
+
 function appendPosts(postsJson) {
+
   let length = postsJson.data.length;
   let postsGrid = document.getElementById('posts-grid');
-  
+
+  let maxCount = sessionStorage.getItem('max_count');
+  if (maxCount == undefined) {
+    maxCount = 10;
+    localStorage.setItem('max_count', maxCount);
+  }
+
+
   while (postsGrid.firstChild) { postsGrid.removeChild(postsGrid.firstChild); }
 
   //append posts nodes to html DOM
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < maxCount; i++) {
 
-    if ((postsJson.data[i].showPost !== -1) || (postsJson.data[i].deletedPost == true)) {
+
+
+
+    if ((postsJson.data[i].showPost !== -1) && (postsJson.data[i].deletedPost !== true)) {
       let post = document.createElement('article');
+      if (i == maxCount - 1) post.onmouseover = appendTen;
 
       let tags = ``;
       postsJson.data[i].tags.forEach((item, i, arr) => {
@@ -32,13 +46,11 @@ function appendPosts(postsJson) {
 
       postsGrid.appendChild(post);
     }
-
-    sessionStorage.setItem("posts", postsJson.data);
   }
 }
 
 //Draw Posts Function
-function drawPost(postsJson, sortUploudsDate, tags, keySearch) {
+function drawPost(postsJson, sortUploudsDate, tags, keySearch, deletedPosts) {
 
   let length = postsJson.data.length;
   //sort Posts by Date
@@ -51,24 +63,44 @@ function drawPost(postsJson, sortUploudsDate, tags, keySearch) {
   //filter by Keywords
   if (keySearch !== '') { searchKeyword(postsJson, keySearch) }
 
+  //filtered deleted posts
+  postsJson.data.forEach((item, i, arr) => {
+
+    deletedPosts.forEach((deletedPost) => {
+      if (deletedPost === item.title) item["deletedPost"] = true;
+    });
+
+  });
+
   //append posts nodes to html DOM
   appendPosts(postsJson);
 
 }
 
 //load json file function
-function loadJSON(sortUploudsDate = 'recently', tags = [], keySearch = '') {
+function loadJSON(sortUploudsDate = 'recently', tags = [], keySearch = '', deletedPost = []) {
   fetch('posts.json')
     .then(function (response) {
       return response.json();
     })
     .then(function (postsJson) {
-      drawPost(postsJson, sortUploudsDate, tags, keySearch);
+      drawPost(postsJson, sortUploudsDate, tags, keySearch, deletedPost);
     })
     .catch(alert);
 }
 
 
+function appendTen(e) {
+  e.target.removeEventListener('onmouseover',appendTen); 
+  let maxCount = sessionStorage.getItem('max_count') + 10;
+  localStorage.setItem('max_count', maxCount);
 
+  let date = localStorage.getItem('date_filter');
+  if (date == "firstly") document.getElementById('date_filter').value = "firstly";
+  let tags = localStorage.getItem('tags_filter');
+  if (tags == '' || tags == null) tags = [];
+  else tags = tags.split(",");
+  loadJSON(date, tags, '', []);
+}
 
 
