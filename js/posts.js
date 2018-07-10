@@ -70,7 +70,7 @@ function drawPost(postsJson, sortUploudsDate, tags, keySearch, deletedPosts) {
 	}
 
 	//filtered deleted posts
-	postsJson.data.forEach((item, i, arr) => {
+	postsJson.data.forEach((item,   z) => {
 
 		deletedPosts.forEach((deletedPost) => {
 			if (deletedPost === item.title) item["deletedPost"] = true;

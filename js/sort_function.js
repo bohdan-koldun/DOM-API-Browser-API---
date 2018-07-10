@@ -14,7 +14,7 @@ let date_sort_desc = function (post1, post2) {
 
 
 let tags_sort_desc = function (post1, post2) {
-	return post2.countFilterTags - post1.countFilterTags;
+	return (1*post1.countFilterTags) - (1*post2.countFilterTags);
 };
 
 

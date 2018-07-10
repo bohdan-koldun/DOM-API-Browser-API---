@@ -22,7 +22,7 @@ tagsFilter.onchange = function () {
 	let tagsSpan = document.getElementsByClassName('tag');
 	tags = [];
 	for (let i = 0; i < tagsSpan.length; i++) {
-		tags.push(tagsSpan[i].dataset.tag);
+		tags.push(tagsSpan[i].textContent);
 	}
 	localStorage.setItem('tags_filter', tags);
 
