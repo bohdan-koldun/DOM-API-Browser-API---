@@ -14,7 +14,15 @@ let date_sort_desc = function (post1, post2) {
 
 
 let tags_sort_desc = function (post1, post2) {
-	return (1*post2.countFilterTags) - (1*post1.countFilterTags);
+    let num_date =0, num_tag = 0;
+
+    var date1 = new Date(post1.createdAt);
+    var date2 = new Date(post2.createdAt);
+    
+    if(date1 < date2) num_date =0.1;
+    num_tag = (1*post2.countFilterTags) - (1*post1.countFilterTags);
+
+	return num_tag + num_date;
 };
 
 
