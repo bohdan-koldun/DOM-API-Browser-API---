@@ -92,7 +92,7 @@ function loadJSON(sortUploudsDate = 'recently', tags = [], keySearch = '', delet
 		.then(function (postsJson) {
 			drawPost(postsJson, sortUploudsDate, tags, keySearch, deletedPost);
 		})
-		.catch(alert);
+		.catch();
 }
 
 
