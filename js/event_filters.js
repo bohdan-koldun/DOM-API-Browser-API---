@@ -29,8 +29,6 @@ tagsFilter.onchange = function () {
     }
     localStorage.setItem('tags_filter', tags);
 
-
-    localStorage.getItem('date_filter')
     let dateFilter = localStorage.getItem('date_filter');
     loadJSON(dateFilter, tags, '' , getDeletedPosts()) 
 }
@@ -54,7 +52,7 @@ function addaOldTags(tags) {
 { 
     let tag_elem = document.createElement('span');
     let tags_input = document.getElementsByClassName('tags-input')[0];
-    tag_elem.className = tag;
+    tag_elem.className = "tag";
     tag_elem.innerHTML = tag;
     
     tags_input.insertBefore( tag_elem, tags_input.children[0]);

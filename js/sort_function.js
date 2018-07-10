@@ -3,13 +3,13 @@ let date_sort_asc = function (post1, post2) {
 
     var date1 = new Date(post1.createdAt );
     var date2 = new Date(post2.createdAt );
-    return date2-date1;
+    return date1-date2;
 };
 
 let date_sort_desc = function (post1, post2) {
     var date1 = new Date(post1.createdAt );
     var date2 = new Date(post2.createdAt );
-    return date1-date2;
+    return date2-date1;
 };
 
 

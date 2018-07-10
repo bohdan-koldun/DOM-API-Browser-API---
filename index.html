@@ -33,6 +33,23 @@
         grid-template-columns: 150px 1fr;
         grid-gap: 10px;
     }
+    .filter-menu{
+        padding: 0.01em 16px;
+        display: grid;
+        grid-template-columns: 320px 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .tags-input{
+   width: 310px!important;
+    }
+
+    @media (max-width: 992px){
+        .filter-menu{
+  
+        grid-template-columns: 1fr;
+    }
+
+    }
 </style>
 
 
@@ -92,14 +109,17 @@
                 <h1>
                     <b>My Blog</b>
                 </h1>
-                <div class="w3-section w3-bottombar w3-padding-16">
-                    <span class="w3-margin-right">Filter:</span>
-                    <select class="w3-button w3-white w3-black" id="date_filter">
+                <div class="w3-section w3-bottombar w3-padding-16 filter-menu">
+                    <div>   <span class="w3-margin-right">Filter:</span>
+                        <select class="w3-button w3-white w3-black" id="date_filter">
+
+                      
+                 
                         <option value="recently">Recently uploaded</option>
                         <option value="firstly">Firstly uploads</option>
                     </select>
-
-                    <input name="hashtags" type="tags" pattern="^#" placeholder="#hashtags" id="tags_filter" class="w3-button w3-white">
+                </div>
+                    <input name="hashtags" type="tags" pattern="^#" placeholder="#tags" id="tags_filter" class="w3-button w3-white">
                     <input name="search" type="text" placeholder="search..." id="search_filter" class="w3-button w3-white" style="text-align: left;">
                 </div>
             </div>
@@ -250,7 +270,7 @@
             loadJSON(date, tags, '', []);
             [].forEach.call(document.querySelectorAll('input[type="tags"]'), tagsInput);
             sessionStorage.clear();
-            //addTag("dsd");
+            addaOldTags(tags);
         </script>
 
         <script>
