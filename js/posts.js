@@ -108,4 +108,6 @@ function appendTen(e) {
 	if (tags == '' || tags == undefined) tags = [];
 	else tags = tags.split(",");
 	loadJSON(date, tags, '', []);
+
+	document.getElementById('return-10-list').style.display = 'block';
 }
